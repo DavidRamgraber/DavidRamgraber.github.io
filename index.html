@@ -16,10 +16,37 @@
       height: auto;
       display: block;
     }
+
+    .chat-btn {
+      position: fixed;
+      bottom: 80px;
+      right: 24px;
+      background-color: #0a5c8f;
+      color: white;
+      border: none;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      z-index: 9999;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .chat-btn:hover {
+      background-color: #084d78;
+      transform: scale(1.03);
+    }
   </style>
 </head>
 <body>
-  <img src="https://sprcdn-assets.sprinklr.com/1436/6a02cf15-0b77-4779-be69-9602f8198561-852371290/Screenshot_2026-04-21_at_15.30.png" alt="Main Image" />
+  <img src="https://sprcdn-assets.sprinklr.com/1436/7ab84942-6510-4952-9b5a-1883ec0deca4-754536800/Allianz.png" alt="Main Image" />
+
+  <button class="chat-btn" onclick="window.sprChat('openNewConversation', ['Hi there!', 'It looks like you have questions — how can I help you today?'])">
+    💬 Chat with us
+  </button>
+
 <script>
 window.sprChatSettings = {"appId":"69c262fcd6f5252c0558c60b_app_2471124","skin":"MODERN"};
 !function(){var t=window,a=t.sprChat;if(!a||!a.loaded){var e=document,n=function(){n.q.push(arguments)};
