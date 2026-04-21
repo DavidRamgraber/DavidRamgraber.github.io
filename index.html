@@ -11,41 +11,39 @@
       background: #f0f0f0;
     }
 
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
     img {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    .chat-btn {
-      position: fixed;
-      bottom: 80px;
-      right: 24px;
-      background-color: #0a5c8f;
-      color: white;
-      border: none;
-      padding: 14px 22px;
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      z-index: 9999;
-      transition: background-color 0.2s ease, transform 0.1s ease;
-    }
+    .invisible-btn {
+      position: absolute;
+      /* Adjust these four values to align with the button in the image: */
+      top: 62%;        /* distance from top of image */
+      left: 36%;       /* distance from left */
+      width: 28%;      /* how wide the hotspot is */
+      height: 6%;      /* how tall the hotspot is */
 
-    .chat-btn:hover {
-      background-color: #084d78;
-      transform: scale(1.03);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      /* Uncomment the line below to see the hotspot while positioning it: */
+      /* background: rgba(255, 0, 0, 0.3); */
     }
   </style>
 </head>
 <body>
-  <img src="https://sprcdn-assets.sprinklr.com/1436/7ab84942-6510-4952-9b5a-1883ec0deca4-754536800/Allianz.png" alt="Main Image" />
-
-  <button class="chat-btn" onclick="window.sprChat('openNewConversation', ['Hi there!', 'It looks like you have questions — how can I help you today?'])">
-    💬 Chat with us
-  </button>
+  <div class="image-wrapper">
+    <img src="https://sprcdn-assets.sprinklr.com/1436/7ab84942-6510-4952-9b5a-1883ec0deca4-754536800/Allianz.png" alt="Main Image" />
+    <button class="invisible-btn" onclick="window.sprChat('openNewConversation', ['Willkommen Herr Agapitus! Wie kann ich Ihnen helfen?'])"></button>
+  </div>
 
 <script>
 window.sprChatSettings = {"appId":"69c262fcd6f5252c0558c60b_app_2471124","skin":"MODERN"};
